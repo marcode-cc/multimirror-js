@@ -1,0 +1,46 @@
+{
+  "name": "multimirror-js",
+  "version": "1.0.16",
+  "description": "Multimirror Echo Solution for real time communication.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"./src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/albatarnik/multimirror-js"
+  },
+  "keywords": [
+    "echo",
+    "websocket",
+    "pusher",
+    "broadcast",
+    "laravel"
+  ],
+  "author": "Kamal Albatarni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/albatarnik/multimirror-js/-/issues"
+  },
+  "homepage": "https://github.com/larasocket/larasocket-js#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.0",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
